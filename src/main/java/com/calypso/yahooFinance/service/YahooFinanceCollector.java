@@ -151,15 +151,15 @@ public class YahooFinanceCollector {
 	return quotes;
     }
 
-    public static void main(String[] args) {
-		YahooFinanceCollector yfc = new YahooFinanceCollector();
-		
-		yfc.getHisByStock("MSFT", "2015-04-01", "2016-08-10");
-		
+//    public static void main(String[] args) {
+//		YahooFinanceCollector yfc = new YahooFinanceCollector();
+//		
+//		yfc.getHisByStock("MSFT", "2015-04-01", "2016-08-10");
+//		
 //		String[] symbols = new String[] {"GOOG", "MSFT"};
 //		List<Quote> quotes = yfc.getQuotes(symbols, "2015-04-01", "2016-08-10");
 //		for (Quote q : quotes) {
 //		    System.out.println("Symbol: " + q.symbol + " Date: " + q.date + " Close: " + q.close);
 //		}
-    }
+//    }
 }
