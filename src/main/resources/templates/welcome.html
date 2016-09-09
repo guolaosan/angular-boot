@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+</head>
+<body ng-app="yahooFinance">
+
+<div class="container" ng-controller="stockController">
+Company Name: <input type="text" ng-model="name"/>
+<ul>
+<li name="Symbol">{{symbol}}</li>
+<li name="Price">{{price}}</li>
+<li name="Date">{{date}}</li>
+<li name="Time">{{time}}</li>
+<li name="Change">{{change}}</li>
+</ul>
+</div>
+
+<script>
+var app = angular.module('yahooFinance', []);
+
+app.run(function($http){
+	$http.get("/v1/finance/company", {params: {name: name}}).success(function(data){
+		stockJson = data;
+		console.log("Stock.html data");
+		console.log(data);
+	});
+});
+
+app.controller('stockController', function($scope){
+	
+});
+
+</script>
+</body>
+</html>
