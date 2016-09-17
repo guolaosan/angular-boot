@@ -9,21 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
 public class GreetingController {
 
     @Autowired
     private ReportRepository reportRepo;
     
     @RequestMapping("/author/{auth}")
+    @CrossOrigin
     public List<Report> getReports(@PathVariable("auth") String auth){
     	return reportRepo.findByAuthorLike(auth);
     }
     
+    @CrossOrigin
     @RequestMapping("/code/{code}")
     public List<Report> getReportsHasCode(@PathVariable("code") String code){
     	return reportRepo.findBySecuFullCodeLike(code);
     }
+    
     @RequestMapping("/date/{date}")
     public List<Report> getReportsInDate(@PathVariable("date") String date){
     	return reportRepo.findByDatetimeLike(date);
