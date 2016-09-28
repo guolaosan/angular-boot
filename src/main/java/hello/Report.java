@@ -48,6 +48,12 @@ public class Report {
 	public void setSecuName(String secuName) {
 		this.secuName = secuName;
 	}
+	public String getPdfurl() {
+		return pdfurl;
+	}
+	public void setPdfurl(String pdfurl) {
+		this.pdfurl = pdfurl;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -63,5 +69,6 @@ public class Report {
 	private String secuFullCode;
 	private String secuName;
 	private String title;
+	private String pdfurl;
 
 }
