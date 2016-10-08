@@ -14,6 +14,9 @@ public class GreetingController {
     @Autowired
     private ReportRepository reportRepo;
     
+    @Autowired
+    private AnalystRepository anaRepo;
+    
     @RequestMapping("/author/{auth}")
     @CrossOrigin
     public List<Report> getReports(@PathVariable("auth") String auth){
@@ -29,5 +32,11 @@ public class GreetingController {
     @RequestMapping("/date/{date}")
     public List<Report> getReportsInDate(@PathVariable("date") String date){
     	return reportRepo.findByDatetimeLike(date);
+    }
+    
+    @CrossOrigin
+    @RequestMapping("/ana")
+    public List<Analyst> getAllAnas(){
+    	return anaRepo.findAll();
     }
 }
